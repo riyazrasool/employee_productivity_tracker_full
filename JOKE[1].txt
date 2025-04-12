@@ -1,0 +1,94 @@
+# Employee Productivity Tracker
+
+A simple web-based application for employees to submit daily productivity reports and download them as CSV. Built using HTML, CSS, PHP, MySQL, and Bootstrap.
+
+---
+
+## ✅ Features
+- Employee login system (session-based)
+- Daily report submission with date, hours worked, and task summary
+- View all submitted reports
+- Export reports to CSV file
+- Clean and responsive design
+
+---
+
+## 🔧 Technologies Used
+- **Frontend**: HTML, CSS
+- **Backend**: PHP
+- **Database**: MySQL (via phpMyAdmin)
+- **Server**: Apache (XAMPP)
+
+---
+
+## 📁 Folder Structure
+```
+employee_productivity_tracker/
+│
+├── index.php              # Dashboard
+├── login.php              # Login page
+├── auth.php               # Login authentication
+├── report.php             # Report submission form
+├── submit.php             # Report processing logic
+├── view_reports.php       # Shows submitted reports
+├── download.php           # Downloads report as CSV
+├── logout.php             # Logout session
+├── db_config.php          # DB connection
+└── README.md              # Project documentation
+```
+
+---
+
+## 🛠️ Setup Instructions
+
+1. **Install XAMPP** if not already installed.
+2. Extract or clone the project into:
+   ```
+   C:\xampp\htdocs\employee_productivity_tracker
+   ```
+3. **Start Apache and MySQL** from XAMPP Control Panel.
+4. Open **phpMyAdmin** and import the SQL file or create a database:
+   ```
+   Database name: employee_productivity
+   ```
+   Then create the following tables:
+
+### Table: `employees`
+```sql
+CREATE TABLE employees (
+  emp_id VARCHAR(20) PRIMARY KEY,
+  emp_name VARCHAR(100)
+);
+```
+
+### Table: `reports`
+```sql
+CREATE TABLE reports (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  emp_id VARCHAR(20),
+  summary TEXT,
+  hours_worked FLOAT,
+  date DATE
+);
+```
+
+---
+
+## 📌 Usage
+1. Open browser and go to:
+   ```
+   http://localhost/employee_productivity_tracker/login.php
+   ```
+2. Enter valid `emp_id` and `emp_name` to log in (insert them manually into DB first).
+3. Submit reports and view/download them.
+
+---
+
+## ✨ Author
+Built by MD Riyaz Rasool as a portfolio project for placement preparation (TCS, Infosys, Accenture).
+
+---
+
+## 📃 License
+Free to use and modify for educational purposes.
+
